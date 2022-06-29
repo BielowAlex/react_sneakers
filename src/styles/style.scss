@@ -1,0 +1,15 @@
+@import "normalize";
+@import "import";
+@import "fonts";
+
+body {
+  font-family: 'WhyteInktrap', sans-serif;
+  font-weight: 400;
+}
+
+.content_section{
+  display: flex;
+  justify-content: center;
+  padding: 45px 60px;
+}
+
