@@ -5,7 +5,6 @@ const MenuItemList = () => {
     return (
         <div className="menu_item_list">
             <Menuitem/>
-            <Menuitem/>
         </div>
     );
 };

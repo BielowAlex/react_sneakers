@@ -1,17 +1,22 @@
 import React from 'react';
 import {CardButton} from "../CardButton/CardButton";
+import {ISneakers} from "../../interfaces/sneakers_interface";
 
-const SneakersCard = () => {
+interface IProps{
+    sneakers:ISneakers
+}
+
+const SneakersCard:React.FC<IProps> = ({sneakers:{id,price,name,imageUrl}}) => {
     return (
         <div className="sneakers_card">
             <div className="sneakers_card_top">
-                <img width={133} height={112} src="/img/sneakers1.jpg" alt="sneakers photo"/>
-                <h3>Men’s Sneakers Nike Blazer Mid Suede</h3>
+                <img width={133} height={112} src={imageUrl} alt="sneakers photo"/>
+                <h3>{name}</h3>
             </div>
             <div className="sneakers_card_bottom">
                 <div className="price">
                     <span className="subtext">Price:</span>
-                    <span className="price_count">1650 UAH</span>
+                    <span className="price_count">{price} UAH</span>
                 </div>
                 <CardButton>
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"

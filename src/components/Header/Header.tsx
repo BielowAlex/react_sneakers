@@ -1,8 +1,10 @@
 import React from 'react';
-import {OverlayHandler} from "../../interfaces/OverlayHandler";
 
+interface IProps{
+    setOverlay:()=>void
+}
 
-const Header:React.FC<OverlayHandler> = ({setOverlay}) => {
+const Header:React.FC<IProps> = ({setOverlay}) => {
     return (
         <header className="header">
             <div className="header_left">

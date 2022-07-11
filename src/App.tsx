@@ -1,27 +1,29 @@
 import * as React from "react";
-import {useState} from "react";
-import {Routes,Route} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 
 import './styles/style.css'
-import {Header} from "./components";
+// import {Header} from "./components";
 import {Cart, Home} from "./Pages";
+import {MainLayout} from "./Layouts/MainLayout";
 
 
+function Navigate(props: { to: string }) {
+    return null;
+}
 
 const App: React.FC = () => {
-    const [overlayShow, setOverlayShow] = useState(false);
-    const setOverlay = () =>{
+    const [overlayShow, setOverlayShow] = React.useState(false);
+    const setOverlay = () => {
         setOverlayShow(!overlayShow);
     }
 
     return (
-        <div className="wrapper">
-            <Header setOverlay={setOverlay}/>
-            <Routes>
-                <Route path="/" element={<Home setOverlay={setOverlay} overlayShow={overlayShow}/>}/>
+        <Routes>
+            <Route path="/" element={<MainLayout setOverlay={setOverlay}/>}>
+                <Route index element={<Home setOverlay={setOverlay} overlayShow={overlayShow}/>}/>
                 <Route path="/cart" element={<Cart/>}/>
-            </Routes>
-        </div>
+            </Route>
+        </Routes>
     );
 }
 

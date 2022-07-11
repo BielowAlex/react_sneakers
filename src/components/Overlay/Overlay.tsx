@@ -1,10 +1,21 @@
 import React from 'react';
-import {OverlayHandler} from "../../interfaces/OverlayHandler";
 import {MenuItemList} from "../MenuItemList";
 import {OverlayButton} from "../OverlayButton/OverlayButton";
 import {Link} from "react-router-dom";
+import {TypedUseSelectorHook, useSelector} from "react-redux";
+import {RootState} from "../../redux";
 
-const Overlay:React.FC<OverlayHandler> = ({setOverlay,overlayShow}) => {
+interface IProps{
+    setOverlay:()=>void,
+    overlayShow?:boolean
+}
+
+const useAppSelector:TypedUseSelectorHook<RootState>=useSelector;
+
+const Overlay:React.FC<IProps> = ({setOverlay,overlayShow}) => {
+
+    const {cartList} = useAppSelector(state => state.sneakersReducer);
+
     return (
         <div className={`overlay ${overlayShow?'_active':''}`}>
             <div
