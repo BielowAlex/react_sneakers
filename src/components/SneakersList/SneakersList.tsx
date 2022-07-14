@@ -1,18 +1,20 @@
 import React from 'react';
+
 import {SneakersCard} from "../SneakersCard";
-import {sneakersService} from "../../services";
-import {ISneakers} from "../../interfaces/sneakers_interface";
+import {useAppDispatch, useAppSelector} from "../../hook/redux";
+import {sneakersActions} from "../../redux";
 
 const SneakersList:React.FC = () => {
-    const [sneakers,setSneakers] = React.useState<ISneakers[]>([]);
+    const {sneakersList} = useAppSelector(state => state.sneakersReducer);
+    const dispatch = useAppDispatch();
+
     React.useEffect(()=>{
-        sneakersService.getAll().then(({data})=>setSneakers(data));
-    },[])
-    console.log(sneakers);
+        dispatch(sneakersActions.getSneakersList())
+    },[dispatch]);
+
     return (
         <div className="sneakers_list">
-
-            {sneakers.length>0 && sneakers.map(sneakers=><SneakersCard sneakers={sneakers} key={sneakers.id}/> )}
+            {sneakersList.length>0 && sneakersList.map(sneakers=><SneakersCard sneakers={sneakers} key={sneakers.id}/> )}
         </div>
     );
 };
