@@ -8,7 +8,7 @@ interface IProps{
 }
 
 const Home:React.FC<IProps> = ({setOverlay,overlayShow}) => {
-    return (
+    return(
         <>
             <Overlay setOverlay={setOverlay} overlayShow={overlayShow}/>
             <Slider/>

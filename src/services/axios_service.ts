@@ -1,7 +1,6 @@
 import axios from "axios";
-import {baseURL} from "../constants";
 
-// const baseURL = 'https://bielowalex.github.io/portfolio'
+import {baseURL} from "../constants";
 
 const axiosService = axios.create({baseURL});
 

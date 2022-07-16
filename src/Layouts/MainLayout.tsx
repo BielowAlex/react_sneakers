@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import {Outlet, useLocation} from 'react-router-dom';
 import {Header} from "../components";
 
 interface IProps{
@@ -7,10 +7,14 @@ interface IProps{
 }
 
 const MainLayout:React.FC<IProps> = ({setOverlay}) => {
+    const {pathname} = useLocation();
 
     return (
         <div>
-            <Header setOverlay={setOverlay}/>
+            {pathname !=='/login' && pathname!=='/signup'
+                ?<Header setOverlay={setOverlay}/>
+                :null
+            }
             <Outlet/>
         </div>
     );
