@@ -1,6 +1,6 @@
 import React from 'react';
 import {Outlet, useLocation} from 'react-router-dom';
-import {Header} from "../components";
+import {Footer, Header} from "../components";
 
 interface IProps{
     setOverlay:()=>void
@@ -16,6 +16,7 @@ const MainLayout:React.FC<IProps> = ({setOverlay}) => {
                 :null
             }
             <Outlet/>
+            <Footer/>
         </div>
     );
 };

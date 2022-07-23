@@ -1,1 +1,1 @@
-export * from './Sneaker'
+export * from './Sneakers'

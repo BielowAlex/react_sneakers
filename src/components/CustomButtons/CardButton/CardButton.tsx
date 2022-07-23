@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {ISneakers} from "../../../interfaces/sneakers_interface";
-import {useAppDispatch, useAppSelector} from "../../../hook/redux";
+import {useAppDispatch} from "../../../hook/redux";
 import {sneakersActions} from "../../../redux";
 
 interface IProps {
@@ -25,13 +25,14 @@ const CardButton: React.FC<IProps> = ({children, sneakers, isRemove,index}) => {
     React.useEffect(()=>{
         const timer = setTimeout(()=>{
             setIsAdded(false);
-        },1000);
+        },2000);
         return ()=>clearTimeout(timer);
     },[isAdded])
 
     return (
-        <button className="card_btn" onClick={addSneakers}>
-            {isAdded ? <img src="img/added.svg" alt="added"/> : children}
+        <button className={`card_btn ${isAdded&&!isRemove?'_active':''}`} onClick={addSneakers}>
+            {/*{isAdded ? <img src="img/added.svg" alt="added"/> : children}*/}
+            {children?children:<span className="btn_item"/>}
         </button>
     );
 };
