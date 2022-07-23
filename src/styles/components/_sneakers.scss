@@ -116,7 +116,7 @@
 
         &:hover {
           .sort_popup {
-            opacity: 1;
+            display: flex;
           }
         }
       }
@@ -183,7 +183,7 @@
   z-index: 2;
   overflow: hidden;
   transition: all 0.3s linear;
-  opacity: 0;
+  display: none;
 
   li {
     padding: 10px;

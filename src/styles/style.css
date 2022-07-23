@@ -624,7 +624,7 @@ svg path {
   font-weight: 200;
 }
 .sneakers_top .right_section .sort:hover .sort_popup {
-  opacity: 1;
+  display: flex;
 }
 .sneakers_top h2 {
   font-style: normal;
@@ -678,7 +678,7 @@ svg path {
   z-index: 2;
   overflow: hidden;
   transition: all 0.3s linear;
-  opacity: 0;
+  display: none;
 }
 .sort_popup li {
   padding: 10px;
