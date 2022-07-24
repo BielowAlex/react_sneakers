@@ -1,6 +1,6 @@
 import React from 'react';
-import {Overlay} from "../../components";
-import {Slider, Sneakers} from "../../components";
+import {Overlay} from "../../Components";
+import {Slider, Sneakers} from "../../Components";
 
 interface IProps{
     setOverlay:()=>void,

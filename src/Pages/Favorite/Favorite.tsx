@@ -1,5 +1,5 @@
 import React from 'react';
-import {FavoriteSneakers, Overlay} from "../../components";
+import {FavoriteSneakers, Overlay} from "../../Components";
 interface IProps{
     setOverlay:()=>void,
     overlayShow?:boolean
